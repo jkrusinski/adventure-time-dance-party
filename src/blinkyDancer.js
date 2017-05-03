@@ -9,3 +9,5 @@ class BlinkyDancer extends Dancer {
     this.$node.toggle();
   }
 }
+
+window.BlinkyDancer = BlinkyDancer;

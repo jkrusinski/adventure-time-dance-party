@@ -11,7 +11,7 @@ class Dancer {
   }
 
   step() {
-    setTimeout(this.step, this.timeBetweenSteps);
+    setTimeout(this.step.bind(this), this.timeBetweenSteps);
   }
 
   setPosition(top, left) {
@@ -23,3 +23,5 @@ class Dancer {
     });
   }
 }
+
+window.Dancer = Dancer;
