@@ -8,6 +8,7 @@ body {
   margin: 0;
   background-color:#444;
   font-size: 18px;
+  font-family: 'Sanchez', sans-serif;
   background-image: url('src/media/treehouse.jpeg');
   background-size: 100% 100%;
 }
@@ -22,4 +23,39 @@ body, a:link, a:visited, a:active {
   text-shadow: 1px 1px 2px white;
   color: rgb(204, 38, 38);
   text-align: center;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+button {
+  display: inline-block;
+  font-family: 'Sanchez', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  border-width: 3px;
+  border-color: #5EB04C;
+  border-style: solid;
+  background-color: #a8ff95;
+  color: #444444;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #5EB04C;
+}
+
+button:focus {
+  outline: none;
 }
