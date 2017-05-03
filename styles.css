@@ -9,6 +9,7 @@ body {
   background-color:#444;
   font-size: 18px;
   background-image: url('src/media/treehouse.jpeg');
+  background-size: 100% 100%;
 }
 
 body, a:link, a:visited, a:active {
