@@ -3,6 +3,33 @@ $(document).ready(function() {
   window.jake = null;
   window.princesses = [];
 
+  var $body = $('body');
+
+  var randCoor = function() {
+    var height = $body.height();
+    var width = $body.width();
+
+    return [height * Math.random(), width * Math.random()];
+  };
+
+  $('.addJake').on('click', function(event) {
+
+    if (!window.jake) {
+      var coor = randCoor();
+      jake = new Jake(coor[0], coor[1]);
+      $body.append(jake.$node);
+    }
+    
+  });
+
+  $('.addFinn').on('click', function(event) {
+
+  });
+
+  $('.addPrincess').on('click', function(event) {
+
+  });
+
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.

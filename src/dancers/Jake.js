@@ -1,6 +1,6 @@
 class Jake extends Dancer {
 
-  constructor(top, left, delay) {
-    super(top, left, delay, '/src/media/jake-the-dog.gif');
+  constructor(top, left) {
+    super(top, left, 'src/media/jake-the-dog.gif');
   }
 }
