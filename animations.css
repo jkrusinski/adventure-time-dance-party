@@ -1,0 +1,64 @@
+.pendulum {
+  animation: animate-pendulum 1.5s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+
+@keyframes animate-pendulum {
+  0%, 100% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+}
+
+.jump {
+  animation: animate-jump 0.5s ease-in-out infinite;
+}
+
+@keyframes animate-jump {
+  0%, 100% {
+    transform: translateY(1em);
+  }
+  50% {
+    transform: translateY(-1em);
+  }
+}
+
+.freak-out {
+  animation: animate-freak-out 1s ease-in-out infinite;
+}
+
+@keyframes animate-freak-out {
+  0%, 100% {
+    transform: translateY(4em);
+  }
+  16.66% {
+    transform: translateX(3em);
+  }
+  33.33% {
+    transform: scale(0.75);
+  }
+  49.99% {
+    transform: translateY(-4em);
+  }
+  66.66% {
+    transform: translateX(-3em);
+  }
+  83.33% {
+    transform: scale(1.25);
+  }
+}
+
+.spin {
+  animation: animate-spin 1s linear infinite;
+}
+
+@keyframes animate-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
