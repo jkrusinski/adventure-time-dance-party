@@ -19,11 +19,16 @@ $(document).ready(function() {
       jake = new Jake(coor[0], coor[1]);
       $body.append(jake.$node);
     }
-    
+
   });
 
   $('.addFinn').on('click', function(event) {
 
+    if (!window.finn) {
+      var coor = randCoor();
+      finn = new Finn(coor[0], coor[1]);
+      $body.append(finn.$node);
+    }
   });
 
   $('.addPrincess').on('click', function(event) {
