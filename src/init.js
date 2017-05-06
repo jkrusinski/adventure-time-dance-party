@@ -21,7 +21,7 @@ $(document).ready(function() {
   };
 
   var addDance = function($node) {
-    var dances = ['pendulum', 'jump', 'freak-out', 'spin'];
+    var dances = ['pendulum', 'jump', 'pop', 'spin'];
     return $node.addClass(dances[danceCounter++ % dances.length]);
   };
 

@@ -25,27 +25,15 @@
   }
 }
 
-.freak-out {
-  animation: animate-freak-out 1s ease-in-out infinite;
+.pop {
+  animation: animate-pop 1s ease-in-out infinite;
 }
 
-@keyframes animate-freak-out {
+@keyframes animate-pop {
   0%, 100% {
-    transform: translateY(4em);
-  }
-  16.66% {
-    transform: translateX(3em);
-  }
-  33.33% {
     transform: scale(0.75);
   }
-  49.99% {
-    transform: translateY(-4em);
-  }
-  66.66% {
-    transform: translateX(-3em);
-  }
-  83.33% {
+  50% {
     transform: scale(1.25);
   }
 }
