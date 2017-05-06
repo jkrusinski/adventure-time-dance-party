@@ -3,6 +3,14 @@ $(document).ready(function() {
   window.jake = null;
   window.princesses = [];
 
+  var princessConstructors = [
+    BubblegumPrincess,
+    FlamePrincess,
+    LumpySpacePrincess
+  ];
+
+  var princessCounter = 0;
+
   var $body = $('body');
 
   var randCoor = function() {
@@ -29,10 +37,17 @@ $(document).ready(function() {
       finn = new Finn(coor[0], coor[1]);
       $body.append(finn.$node);
     }
+
   });
 
   $('.addPrincess').on('click', function(event) {
 
+    var coor = randCoor();
+    var constructor = princessConstructors[princessCounter++ % 3];
+    var newPrincess = new constructor(coor[0], coor[1]);
+
+    princesses.push(newPrincess);
+    $body.append(newPrincess.$node);
   });
 
   $('.addDancerButton').on('click', function(event) {
