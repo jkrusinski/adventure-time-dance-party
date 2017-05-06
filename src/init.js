@@ -10,6 +10,7 @@ $(document).ready(function() {
   ];
 
   var princessCounter = 0;
+  var danceCounter = 0;
 
   var $body = $('body');
 
@@ -20,12 +21,18 @@ $(document).ready(function() {
     return [height * Math.random(), width * Math.random()];
   };
 
+  var addDance = function($node) {
+    var dances = ['pendulum', 'jump', 'freak-out', 'spin'];
+
+    return $node.addClass(dances[danceCounter++ % dances.length]);
+  };
+
   $('.addJake').on('click', function(event) {
 
     if (!window.jake) {
       var coor = randCoor();
       jake = new Jake(coor[0], coor[1]);
-      $body.append(jake.$node);
+      $body.append(addDance(jake.$node));
     }
 
   });
@@ -35,7 +42,7 @@ $(document).ready(function() {
     if (!window.finn) {
       var coor = randCoor();
       finn = new Finn(coor[0], coor[1]);
-      $body.append(finn.$node);
+      $body.append(addDance(finn.$node));
     }
 
   });
@@ -47,7 +54,7 @@ $(document).ready(function() {
     var newPrincess = new constructor(coor[0], coor[1]);
 
     princesses.push(newPrincess);
-    $body.append(newPrincess.$node);
+    $body.append(addDance(newPrincess.$node));
   });
 
   $('.addDancerButton').on('click', function(event) {
