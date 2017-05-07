@@ -42,6 +42,9 @@ $(document).ready(function() {
     princesses = [];
   };
 
+  var kingPop = function() {
+  };
+
   $('.addJake').on('click', function(event) {
 
     if (!window.jake) {
@@ -71,4 +74,11 @@ $(document).ready(function() {
     princesses.push(newPrincess);
     $body.append(newPrincess.$node);
   });
+
+  $('.iceKingPop').on('click', function(event) {
+
+    $('.ice-king').html('<img src="src/media/ice-king.png" class="ice-king-pop"/>');
+    setTimeout(princessesFlee, 1000);
+  });
+
 });
