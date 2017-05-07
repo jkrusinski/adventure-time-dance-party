@@ -1,6 +1,6 @@
 class LumpySpacePrincess extends Princess {
 
-  constructor(top, left) {
-    super(top, left, 'src/media/lumpy-space-princess.png');
+  constructor(dance, top, left) {
+    super(dance, top, left, 'src/media/lumpy-space-princess.png');
   }
 }

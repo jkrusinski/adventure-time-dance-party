@@ -1,6 +1,6 @@
 class FlamePrincess extends Princess {
 
-  constructor(top, left) {
-    super(top, left, 'src/media/flame-princess.png');
+  constructor(dance, top, left) {
+    super(dance, top, left, 'src/media/flame-princess.png');
   }
 }

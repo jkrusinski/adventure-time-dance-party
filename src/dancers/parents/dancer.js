@@ -1,8 +1,19 @@
 class Dancer {
 
-  constructor(top, left, img) {
+  constructor(dance, top, left, img) {
     this.$node = $('<img src="' + img + '" class="dancer"/>');
     this.setPosition(top, left);
+    this.addDance(dance);
+  }
+
+  addDance(dance) {
+    this.$node.addClass(dance);
+  }
+
+  removeDance(dances) {
+    dances.forEach(function(dance) {
+      this.$node.removeClass(dance);
+    }.bind(this));
   }
 
   setPosition(top, left) {

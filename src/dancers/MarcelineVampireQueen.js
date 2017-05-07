@@ -1,6 +1,6 @@
 class MarcelineVampireQueen extends Princess {
 
-  constructor(top, left) {
-    super(top, left, 'src/media/marceline-the-vampire-queen.png');
+  constructor(dance, top, left) {
+    super(dance, top, left, 'src/media/marceline-the-vampire-queen.png');
   }
 }

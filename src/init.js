@@ -3,17 +3,27 @@ $(document).ready(function() {
   window.jake = null;
   window.princesses = [];
 
-  var princessConstructors = [
+  var princessCounter = 0;
+  var danceCounter = 0;
+
+  var $body = $('body');
+
+  var dances = ['pendulum', 'jump', 'pop', 'spin'];
+
+  var princessFactories = [
     BubblegumPrincess,
     FlamePrincess,
     LumpySpacePrincess,
     MarcelineVampireQueen
   ];
 
-  var princessCounter = 0;
-  var danceCounter = 0;
+  var nextDance = function() {
+    return dances[danceCounter++ % dances.length];
+  };
 
-  var $body = $('body');
+  var nextPrincess = function() {
+    return princessFactories[princessCounter++ % princessFactories.length];
+  };
 
   var randCoor = function() {
     var height = $body.height();
@@ -21,17 +31,12 @@ $(document).ready(function() {
     return [height * Math.random(), width * Math.random()];
   };
 
-  var addDance = function($node) {
-    var dances = ['pendulum', 'jump', 'pop', 'spin'];
-    return $node.addClass(dances[danceCounter++ % dances.length]);
-  };
-
   $('.addJake').on('click', function(event) {
 
     if (!window.jake) {
       var coor = randCoor();
-      jake = new Jake(coor[0], coor[1]);
-      $body.append(addDance(jake.$node));
+      jake = new Jake(nextDance(), coor[0], coor[1]);
+      $body.append(jake.$node);
     }
 
   });
@@ -40,8 +45,8 @@ $(document).ready(function() {
 
     if (!window.finn) {
       var coor = randCoor();
-      finn = new Finn(coor[0], coor[1]);
-      $body.append(addDance(finn.$node));
+      finn = new Finn(nextDance(), coor[0], coor[1]);
+      $body.append(finn.$node);
     }
 
   });
@@ -49,10 +54,10 @@ $(document).ready(function() {
   $('.addPrincess').on('click', function(event) {
 
     var coor = randCoor();
-    var constructor = princessConstructors[princessCounter++ % princessConstructors.length];
-    var newPrincess = new constructor(coor[0], coor[1]);
+    var princessFactory = nextPrincess();
+    var newPrincess = new princessFactory(nextDance(), coor[0], coor[1]);
 
     princesses.push(newPrincess);
-    $body.append(addDance(newPrincess.$node));
+    $body.append(newPrincess.$node);
   });
 });

@@ -1,6 +1,6 @@
 class Princess extends Dancer {
 
-  constructor(top, left, img) {
-    super(top, left, img);
+  constructor(dance, top, left, img) {
+    super(dance, top, left, img);
   }
 }
