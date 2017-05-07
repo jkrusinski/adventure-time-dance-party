@@ -6,7 +6,8 @@ $(document).ready(function() {
   var princessConstructors = [
     BubblegumPrincess,
     FlamePrincess,
-    LumpySpacePrincess
+    LumpySpacePrincess,
+    MarcelineVampireQueen
   ];
 
   var princessCounter = 0;
@@ -48,7 +49,7 @@ $(document).ready(function() {
   $('.addPrincess').on('click', function(event) {
 
     var coor = randCoor();
-    var constructor = princessConstructors[princessCounter++ % 3];
+    var constructor = princessConstructors[princessCounter++ % princessConstructors.length];
     var newPrincess = new constructor(coor[0], coor[1]);
 
     princesses.push(newPrincess);
