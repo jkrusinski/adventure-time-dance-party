@@ -23,7 +23,7 @@ class Dancer {
     this.left = left;
     this.$node.css({
       position: 'absolute',
-      top: top,
+      top: 'calc(' + top + 'px + 15%)',
       left: left
     });
   }

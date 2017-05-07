@@ -26,8 +26,8 @@ $(document).ready(function() {
   };
 
   var randCoor = function() {
-    var height = $canvas.height();
-    var width = $canvas.width();
+    var height = $canvas.height() - 100;
+    var width = $canvas.width() - 100;
     return [height * Math.random(), width * Math.random()];
   };
 
@@ -93,6 +93,16 @@ $(document).ready(function() {
     princesses.forEach(function(princess) {
       coor = randCoor();
       princess.move(coor[0], coor[1]);
+    });
+  });
+
+  $('.lineUp').on('click', function() {
+    var dancers = [finn, jake].concat(princesses);
+    var start = 100;
+
+    dancers.forEach(function(dancer) {
+      dancer.move('45%', start);
+      start += 200;
     });
   });
 
