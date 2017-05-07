@@ -97,8 +97,18 @@ $(document).ready(function() {
   });
 
   $('.lineUp').on('click', function() {
-    var dancers = [finn, jake].concat(princesses);
+    var dancers = [];
     var start = 100;
+
+    if (finn) {
+      dancers.push(finn);
+    }
+
+    if (jake) {
+      dancers.push(jake);
+    }
+
+    dancers = dancers.concat(princesses);
 
     dancers.forEach(function(dancer) {
       dancer.move('45%', start);
