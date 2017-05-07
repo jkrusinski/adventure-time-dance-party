@@ -6,7 +6,7 @@ $(document).ready(function() {
   var princessCounter = 0;
   var danceCounter = 0;
 
-  var $body = $('body');
+  var $canvas = $('.canvas');
 
   var dances = ['pendulum', 'jump', 'pop', 'spin'];
 
@@ -26,8 +26,8 @@ $(document).ready(function() {
   };
 
   var randCoor = function() {
-    var height = $body.height();
-    var width = $body.width();
+    var height = $canvas.height();
+    var width = $canvas.width();
     return [height * Math.random(), width * Math.random()];
   };
 
@@ -42,15 +42,12 @@ $(document).ready(function() {
     princesses = [];
   };
 
-  var kingPop = function() {
-  };
-
   $('.addJake').on('click', function(event) {
 
     if (!window.jake) {
       var coor = randCoor();
       jake = new Jake(nextDance(), coor[0], coor[1]);
-      $body.append(jake.$node);
+      $canvas.append(jake.$node);
     }
 
   });
@@ -60,7 +57,7 @@ $(document).ready(function() {
     if (!window.finn) {
       var coor = randCoor();
       finn = new Finn(nextDance(), coor[0], coor[1]);
-      $body.append(finn.$node);
+      $canvas.append(finn.$node);
     }
 
   });
@@ -72,13 +69,31 @@ $(document).ready(function() {
     var newPrincess = new princessFactory(nextDance(), coor[0], coor[1]);
 
     princesses.push(newPrincess);
-    $body.append(newPrincess.$node);
+    $canvas.append(newPrincess.$node);
   });
 
   $('.iceKingPop').on('click', function(event) {
-
     $('.ice-king').html('<img src="src/media/ice-king.png" class="ice-king-pop"/>');
     setTimeout(princessesFlee, 1000);
+  });
+
+  $('.mixItUp').on('click', function(event) {
+    var coor;
+
+    if (finn) {
+      coor = randCoor();
+      finn.move(coor[0], coor[1]);
+    }
+
+    if (jake) {
+      coor = randCoor();
+      jake.move(coor[0], coor[1]);
+    }
+
+    princesses.forEach(function(princess) {
+      coor = randCoor();
+      princess.move(coor[0], coor[1]);
+    });
   });
 
 });

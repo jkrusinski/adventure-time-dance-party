@@ -18,6 +18,14 @@ body, a:link, a:visited, a:active {
   color: lightblue;
 }
 
+header {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .title {
   font-family: 'Germania One', Serif;
   font-size: 64px;
@@ -27,12 +35,16 @@ body, a:link, a:visited, a:active {
   margin: 0;
 }
 
+.canvas {
+  width: 100%;
+  height: 80%;
+}
+
 footer {
   display: flex;
   justify-content: space-around;
-  position: absolute;
-  bottom: 0;
   width: 100%;
+  height: 10%;
 }
 
 button {

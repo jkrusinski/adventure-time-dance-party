@@ -27,4 +27,13 @@ class Dancer {
       left: left
     });
   }
+
+  move(top, left) {
+    this.top = top;
+    this.left = left;
+    this.$node.animate({
+      top: top,
+      left: left
+    });
+  }
 }
