@@ -7,13 +7,15 @@ class Dancer {
   }
 
   addDance(dance) {
+    this.dance = dance;
     this.$node.addClass(dance);
   }
 
-  removeDance(dances) {
-    dances.forEach(function(dance) {
-      this.$node.removeClass(dance);
-    }.bind(this));
+  removeDance() {
+    if (this.dance) {
+      this.$node.removeClass(this.dance);
+      this.dance = null;
+    }
   }
 
   setPosition(top, left) {

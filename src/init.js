@@ -31,6 +31,17 @@ $(document).ready(function() {
     return [height * Math.random(), width * Math.random()];
   };
 
+  var princessesFlee = function() {
+    var directions = ['top', 'right', 'bottom', 'left'];
+    var counter = 0;
+
+    princesses.forEach(function(princess) {
+      princess.runAway(directions[counter++ % directions.length]);
+    });
+
+    princesses = [];
+  };
+
   $('.addJake').on('click', function(event) {
 
     if (!window.jake) {
