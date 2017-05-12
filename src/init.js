@@ -64,12 +64,15 @@ $(document).ready(function() {
 
   $('.addPrincess').on('click', function(event) {
 
-    var coor = randCoor();
-    var princessFactory = nextPrincess();
-    var newPrincess = new princessFactory(nextDance(), coor[0], coor[1]);
+    if (princesses.length < 4) {
 
-    princesses.push(newPrincess);
-    $canvas.append(newPrincess.$node);
+      var coor = randCoor();
+      var princessFactory = nextPrincess();
+      var newPrincess = new princessFactory(nextDance(), coor[0], coor[1]);
+
+      princesses.push(newPrincess);
+      $canvas.append(newPrincess.$node);
+    }
   });
 
   $('.iceKingPop').on('click', function(event) {
